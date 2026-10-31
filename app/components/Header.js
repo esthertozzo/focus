@@ -1,21 +1,33 @@
-import logoImage from "../assets/images/favicon.svg";
+import Image from "next/image";
 
 function Header({ brandName, navItems }) {
   return (
-    <header className="sticky top-0 z-50 border-b border-[#e8e9f0] bg-white shadow-[0_20px_50px_rgba(40,35,90,0.1)]">
+    <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/90 backdrop-blur-md">
       <nav className="flex min-h-20 flex-col items-center justify-center gap-4 px-8 py-4 md:flex-row md:justify-between md:px-12 md:py-0">
-        <a href="#inicio" className="flex items-center gap-4 text-2xl font-bold text-[--color-nav] no-underline">
-          <span className="flex items-center justify-center">
-            <img className="h-8 w-8" src={logoImage} alt="Logo da Focus" />
-          </span>
-
-          <span className="logo-text">{brandName}</span>
+        <a
+          href="#inicio"
+          className="flex items-center gap-4 text-2xl font-bold text-slate-900"
+        >
+          <Image
+            className="h-8 w-8"
+            src="/favicon.svg"
+            alt={`${brandName} logo`}
+            width={32}
+            height={32}
+            priority
+          />
+          <span>{brandName}</span>
         </a>
 
-        <ul className="m-0 flex list-none flex-wrap justify-center gap-x-8 gap-y-4 p-0 text-base">
+        <ul className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-base font-medium text-slate-600">
           {navItems.map((item) => (
             <li key={item.href}>
-              <a className="text-[#55576b] no-underline transition-colors hover:text-[#0059ff]" href={item.href}>{item.label}</a>
+              <a
+                href={item.href}
+                className="transition-colors hover:text-blue-600"
+              >
+                {item.label}
+              </a>
             </li>
           ))}
         </ul>
