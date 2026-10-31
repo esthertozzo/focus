@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import ProblemSection from "./components/ProblemSection";
 
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
           highlight={heroContent.highlight}
           description={heroContent.description}
         />
+        <ProblemSection />
       </main>
     </div>
   );
