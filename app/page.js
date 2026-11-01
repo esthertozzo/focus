@@ -5,6 +5,7 @@ import StorageSection from "./components/StorageCalculator";
 import SolutionSection from "./components/SolutionSection";
 import HowItWorksSection from "./components/HowItWorksSection";
 import AudienceSection from "./components/AudienceSection";
+import GallerySection from "./components/GallerySection";
 
 
 
@@ -42,6 +43,7 @@ export default function Home() {
         <SolutionSection />
         <HowItWorksSection />
         <AudienceSection />
+        <GallerySection />
       </main>
     </div>
   );
