@@ -6,6 +6,7 @@ import SolutionSection from "./components/SolutionSection";
 import HowItWorksSection from "./components/HowItWorksSection";
 import AudienceSection from "./components/AudienceSection";
 import GallerySection from "./components/GallerySection";
+import TeamSection from "./components/TeamSection";
 
 
 
@@ -44,6 +45,7 @@ export default function Home() {
         <HowItWorksSection />
         <AudienceSection />
         <GallerySection />
+        <TeamSection />
       </main>
     </div>
   );
