@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ProblemSection from "./components/ProblemSection";
 import StorageSection from "./components/StorageCalculator";
+import SolutionSection from "./components/SolutionSection";
 
 
 export default function Home() {
@@ -34,6 +35,7 @@ export default function Home() {
         />
         <ProblemSection />
         <StorageSection />
+        <SolutionSection />
       </main>
     </div>
   );
