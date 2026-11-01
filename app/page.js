@@ -3,6 +3,8 @@ import Hero from "./components/Hero";
 import ProblemSection from "./components/ProblemSection";
 import StorageSection from "./components/StorageCalculator";
 import SolutionSection from "./components/SolutionSection";
+import HowItWorksSection from "./components/HowItWorksSection";
+
 
 
 export default function Home() {
@@ -36,6 +38,7 @@ export default function Home() {
         <ProblemSection />
         <StorageSection />
         <SolutionSection />
+        <HowItWorksSection />
       </main>
     </div>
   );
