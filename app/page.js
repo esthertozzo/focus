@@ -4,6 +4,8 @@ import ProblemSection from "./components/ProblemSection";
 import StorageSection from "./components/StorageCalculator";
 import SolutionSection from "./components/SolutionSection";
 import HowItWorksSection from "./components/HowItWorksSection";
+import AudienceSection from "./components/AudienceSection";
+
 
 
 
@@ -39,6 +41,7 @@ export default function Home() {
         <StorageSection />
         <SolutionSection />
         <HowItWorksSection />
+        <AudienceSection />
       </main>
     </div>
   );
