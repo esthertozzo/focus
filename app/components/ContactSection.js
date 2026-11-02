@@ -17,7 +17,10 @@ const ContactSection = ({ onAdd }) => {
     const [success, setSuccess] = useState(false);
 
     useEffect(() => {
-        nomeInputRef.current?.focus();
+        // Foca o campo apenas se o usuário tiver navegado explicitamente para a seção de contato (#contato)
+        if (typeof window !== "undefined" && window.location.hash === "#contato") {
+            nomeInputRef.current?.focus();
+        }
     }, []);
 
     const handleChange = (e) => {
