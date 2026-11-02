@@ -6,7 +6,7 @@ function Hero({ subtitle, title, highlight, description }) {
           {subtitle}
         </span>
 
-        <h1 className="mb-8 mt-0 text-4xl font-bold tracking-tight text-slate-900 md:text-4xl leading-tight">
+        <h1 className="mb-8 mt-0 text-[3rem] font-bold tracking-tight text-slate-900 md:text-[3rem] leading-tight">
           {title}
           <span className="block bg-gradient-to-r from-blue-600 to-indigo-900 bg-clip-text text-transparent">
             {highlight}

@@ -5,7 +5,7 @@ function SectionHeading({ subtitle, title, description }) {
         {subtitle}
       </span>
       
-      <h2 className="mb-4 mt-0 text-[clamp(2rem,5vw+0.5rem,4rem)] font-bold leading-tight tracking-tight text-slate-900">
+      <h2 className="mb-4 mt-0 text-[3rem] font-bold leading-tight tracking-tight text-slate-900">
         {title}
       </h2>
       
