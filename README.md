@@ -53,39 +53,41 @@ Localizados no diretório [`app/hooks/`](./app/hooks/):
 
 Antes de iniciar, certifique-se de ter instalado em sua máquina:
 * **[Node.js](https://nodejs.org/)** (versão 18.18.0 ou superior recomendada)
-* **npm** (incluso com o Node.js) ou outro gerenciador de pacotes (`yarn`, `pnpm` ou `bun`)
+* **npm** (incluso com a instalação do Node.js)
 * Um navegador web moderno (Google Chrome, Firefox, Edge, etc.)
 
 ---
 
-## 📦 Como Instalar as Dependências
+## 🚀 Como Executar o Projeto Passo a Passo
 
-1. Clone ou extraia o repositório em sua máquina:
+> ⚠️ **Atenção (Obrigatório)**: Como boas práticas de versionamento no Git, a pasta `node_modules` **não é enviada para o repositório no GitHub** (está no `.gitignore`). Por esse motivo, é **estritamente obrigatório rodar o comando `npm install` antes de iniciar a aplicação**, para que todas as bibliotecas e dependências sejam baixadas localmente.
+
+### Passo 1: Clonar ou extrair o repositório
+Abra o terminal na pasta onde deseja colocar o projeto:
 ```bash
 git clone https://github.com/seu-usuario/sprint04-front_web.git
 cd sprint04-front_web
 ```
 
-2. Instale todos os pacotes necessários via npm:
+### Passo 2: Instalar as dependências (Obrigatório)
+Execute o comando abaixo para instalar todas as dependências do projeto listadas no `package.json`:
 ```bash
 npm install
 ```
 
----
-
-## 🚀 Como Executar o Projeto
-
-1. Com as dependências instaladas, inicie o servidor de desenvolvimento:
+### Passo 3: Iniciar o servidor de desenvolvimento
+Após a conclusão da instalação, inicie o projeto executando:
 ```bash
 npm run dev
 ```
 
-2. Abra o seu navegador e acesse:
+### Passo 4: Acessar a aplicação
+Abra o seu navegador e acesse a URL:
 ```
 http://localhost:3000
 ```
 
-> **Dica**: Caso deseje gerar e testar a versão otimizada de produção, utilize:
+> **Dica**: Caso deseje gerar e testar a versão de produção otimizada:
 > ```bash
 > npm run build
 > npm run start
@@ -103,13 +105,6 @@ http://localhost:3000
 
 * **Modo Offline / Resiliência**:
   Caso ocorra oscilação de rede ou a rota remota fique temporariamente indisponível, a aplicação possui um mecanismo inteligente de **contingência automática com `localStorage`**. Um aviso de status informará o usuário, permitindo testar todas as funcionalidades de cadastro, listagem, remoção, filtro e visualização de detalhes normalmente sem interrupções.
-
----
-
-## 🔐 Usuários e Senhas para Teste (Autenticação)
-
-* **Não há autenticação**: Esta aplicação é de acesso **público e institucional**.
-* Não é necessário efetuar login nem inserir credenciais/senhas para utilizar nenhuma das telas, funcionalidades ou rotas.
 
 ---
 
