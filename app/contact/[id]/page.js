@@ -1,79 +1,14 @@
 "use client";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState, Suspense } from "react";
+import { Suspense } from "react";
 import Link from "next/link";
-import api from "../../utils/api";
+import { useContactDetail } from "../../hooks/useContactDetail";
 
 function ContactDetailContent() {
     const params = useParams();
     const router = useRouter();
     const searchParams = useSearchParams();
-    const [contact, setContact] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        const fetchContact = async () => {
-            const contactId = params?.id;
-            if (!contactId) return;
-
-            try {
-                setLoading(true);
-                setError(null);
-
-                // 1. Tentar buscar da API MockAPI
-                try {
-                    const response = await api.get(`/contacts/${contactId}`);
-                    if (response.data) {
-                        setContact(response.data);
-                        return;
-                    }
-                } catch (apiErr) {
-                    console.log("API offline ou contato não encontrado no MockAPI. Buscando localmente...", apiErr);
-                }
-
-                // 2. Buscar no cache do localStorage
-                if (typeof window !== "undefined") {
-                    const cached = localStorage.getItem("contatos");
-                    if (cached) {
-                        try {
-                            const list = JSON.parse(cached);
-                            if (Array.isArray(list)) {
-                                const found = list.find((c) => String(c.id) === String(contactId));
-                                if (found) {
-                                    setContact(found);
-                                    return;
-                                }
-                            }
-                        } catch (err) {
-                            console.error("Erro ao ler cache local:", err);
-                        }
-                    }
-                }
-
-                // 3. Fallback para dados passados na URL / query params
-                const qName = searchParams.get("name") || searchParams.get("nome");
-                if (qName) {
-                    setContact({
-                        id: contactId,
-                        name: qName,
-                        email: searchParams.get("email") || "",
-                        profile: searchParams.get("profile") || "",
-                        message: searchParams.get("message") || searchParams.get("mensagem") || "",
-                    });
-                    return;
-                }
-
-                setError("Contato não encontrado.");
-            } catch (err) {
-                setError(err.message || "Erro desconhecido ao carregar contato.");
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchContact();
-    }, [params?.id, searchParams]);
+    const { contact, loading, error } = useContactDetail(params?.id, searchParams);
 
     if (loading) {
         return (
